@@ -10,6 +10,11 @@ class Scrape:
         self.podcasts = None
 
     def download(self, downloadList):
+        ''' Downloads podcasts that may not exist in the current folder.
+
+        Keyword arguments:
+        downloadList -- An array of URLs to download from
+        '''
         number_of_podcasts = len(downloadList)
 
         for i, podcast in enumerate(downloadList):
@@ -21,6 +26,11 @@ class Scrape:
                 print('## Done. Downloaded {} of {}'.format(i+1, number_of_podcasts))
 
     def scrape(self) :
+        '''Scrapes the podcast URL links from the RSS feed xml file
+        
+        Returns: A list of URLs to the podcast files.
+        '''
+
         self.rss = BeautifulSoup(requests.get(url).text, features='lxml')
         self.podcasts = [x['url'] for x in self.rss.find_all(name='enclosure')]
         
