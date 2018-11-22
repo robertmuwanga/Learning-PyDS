@@ -29,14 +29,9 @@ def verify(number) :
             raise ValueError(4)
     
     except ValueError as e: 
-        if e.args[0] == 1:
-            return '"{}": violates rule #{}'.format(number, e.args[0])
-        elif number_of_rules_passed == 1:
-            return '"{}": passes rule #{}, violates rule #{}'.format(number, number_of_rules_passed, e.args[0])
-        else :
-            return '"{}": passes rules #1-{}, violates rule #{}'.format(number, number_of_rules_passed, e.args[0])
+        return e.args[0]
     
-    return '"{}": passes all rules'.format(number)
+    return True
 
 input = ['5000-0000-0000', '4000-0000-0000', '4007-6000-0000', '4037-6000-0000', '4094-3460-2754']
 

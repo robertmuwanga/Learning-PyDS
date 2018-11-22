@@ -9,7 +9,7 @@ def highest_turnout(data):
 
     for county in data[1:] :
         turnout = county.voters / county.population
-        if(turnout < highest[1]) : highest = (county.name, turnout)
+        if(turnout > highest[1]) : highest = (county.name, turnout)
 
     return highest
 
