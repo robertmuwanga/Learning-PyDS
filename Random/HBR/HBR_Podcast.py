@@ -9,7 +9,11 @@ from bs4 import BeautifulSoup
 url = 'http://feeds.harvardbusiness.org/harvardbusiness/ideacast'
 
 # List podcast episodes of interest. Put 'None' for all.
-podcasts = ['660', '659', '651', '648', '647', '642', '640', '630', '628', '625', '616']
+podcasts = ['660', '659', '651', '648', '647', '642', '640', '630', '628', '625', '616',  
+            '654', '653', '652', '650', '649', '645', '644', '639', '638', '637', '629',  
+                '627', '626', '623', '622', '621', '620', '617', '615', '612', '611', '610', 
+            '658', '657', '646', '634', '633', '631', '624', '619', '614', '613', '608'
+]
 
 # Scape podcast listing from podcast list
 rss = BeautifulSoup(requests.get(url).text, features='lxml')
