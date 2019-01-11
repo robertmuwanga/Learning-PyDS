@@ -15,8 +15,8 @@ def login(driver):
     password_box = driver.find_element_by_name('password')
 
     # Log into portal
-    email_address = 'rmuwanga@nssfug.org'
-    password = '@muw@ng@@N55FUG!'
+    email_address = 
+    password = 
 
     email_address_box.send_keys(email_address)
     password_box.send_keys(password)
